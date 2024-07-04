@@ -4,6 +4,7 @@ using EFCoreTasks.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCoreTasks.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    partial class AppDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240704101748_m4")]
+    partial class m4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,27 +124,6 @@ namespace EFCoreTasks.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Projects");
-                });
-
-            modelBuilder.Entity("EFCoreTasks.Models.RoomInfo", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentId")
-                        .IsUnique();
-
-                    b.ToTable("Rooms");
                 });
 
             modelBuilder.Entity("EFCoreTasks.Models.Student", b =>
@@ -273,17 +254,6 @@ namespace EFCoreTasks.Migrations
                     b.Navigation("Manager");
                 });
 
-            modelBuilder.Entity("EFCoreTasks.Models.RoomInfo", b =>
-                {
-                    b.HasOne("EFCoreTasks.Models.Student", "Student")
-                        .WithOne("room")
-                        .HasForeignKey("EFCoreTasks.Models.RoomInfo", "StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-                });
-
             modelBuilder.Entity("EFCoreTasks.Models.Student", b =>
                 {
                     b.HasOne("EFCoreTasks.Models.Teacher", "teacher")
@@ -327,9 +297,6 @@ namespace EFCoreTasks.Migrations
             modelBuilder.Entity("EFCoreTasks.Models.Student", b =>
                 {
                     b.Navigation("StudentProjects");
-
-                    b.Navigation("room")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("EFCoreTasks.Models.Teacher", b =>

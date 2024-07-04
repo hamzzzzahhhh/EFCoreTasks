@@ -9,6 +9,7 @@ namespace EFCoreTasks.Data
     {
         public void Configure(EntityTypeBuilder<Student> builder) {
             builder.Property(b => b.age).IsRequired();
+            builder.HasOne(e=>e.room).WithOne(e=>e.Student).HasForeignKey<RoomInfo>(e=>e.StudentId);
         }
     }
 }
