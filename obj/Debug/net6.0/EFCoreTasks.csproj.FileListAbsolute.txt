@@ -73,3 +73,4 @@ C:\Users\DELL\source\repos\EFCoreTasks\obj\Debug\net6.0\refint\EFCoreTasks.dll
 C:\Users\DELL\source\repos\EFCoreTasks\obj\Debug\net6.0\EFCoreTasks.pdb
 C:\Users\DELL\source\repos\EFCoreTasks\obj\Debug\net6.0\EFCoreTasks.genruntimeconfig.cache
 C:\Users\DELL\source\repos\EFCoreTasks\obj\Debug\net6.0\ref\EFCoreTasks.dll
+C:\Users\DELL\source\repos\EFCoreTasks\obj\Debug\net6.0\EFCoreTasks.sourcelink.json

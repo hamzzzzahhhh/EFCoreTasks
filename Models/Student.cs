@@ -20,5 +20,8 @@ namespace EFCoreTasks.Models
 
         public ICollection<StudentProjects> StudentProjects { get; set; }
 
+        public Guid RoomId { get; set; }
+
+        public RoomInfo room { get; set; }
     }
 }
